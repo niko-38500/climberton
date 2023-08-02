@@ -16,12 +16,41 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .arrow {
+    @apply border-r-[3px] border-b-[3px] p-1 inline-block rotate-45;
+  }
+
+  .burger-button {
+    height: 30px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .burger-button > span::before,
+  .burger-button > span::after {
+    content: '';
+    display: block;
+  }
+
+  .burger-button > span,
+  .burger-button > span::before,
+  .burger-button > span::after {
+    background: white;
+    height: 3px;
+  }
+
+  .burger-button > span {
+    position: relative;
+  }
+
+  .burger-button > span::after {
+    top: 0;
+  }
+
+  .burger-button > span::after {
+    bottom: 0;
+  }
 }
